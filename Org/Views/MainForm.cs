@@ -29,6 +29,7 @@ namespace Org
         public Action<ProductEditPe> AddRequested { get; set; }
         public Action<ProductEditPe> UpdateRequested { get; set; }
         public Action<int> EditRequested { get; set; }
+        public Action CancelRequested { get; set; }
 
         public MainForm()
         {
@@ -131,6 +132,25 @@ namespace Org
             rtbDescription.Text = pe.Description;
         }
 
+        public void ShowEmptyProduct()
+        {
+            cbCategory.SelectedIndex = 0;
+            cbManufactor.SelectedIndex = 0;
+            nPrice.Value = 0;
+            tbNumber.Text = "0000";
+            cbVendor.SelectedIndex = 0;
+            cbClient.SelectedIndex = 0;
+            cbEmployee.SelectedIndex = 0;
+            dtpReceiveDate.Value = DateTime.Now;
+            dtpSendDate.Value = DateTime.Now;
+            nReceiveCount.Value = 0;
+            nSendCount.Value = 0;
+            nReserveCount.Value = 0;
+            nTotalReceivePrice.Value = 0;
+            nTotalSendPrice.Value = 0;
+            rtbDescription.Text = string.Empty;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Loaded();
@@ -202,6 +222,7 @@ namespace Org
         private void bCancel_Click(object sender, EventArgs e)
         {
             EditMode = false;
+            CancelRequested();
         }
     }
 }

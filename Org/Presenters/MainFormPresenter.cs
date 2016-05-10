@@ -41,6 +41,7 @@ namespace Org.Presenters
             _view.AddRequested += ViewAddRequested;
             _view.UpdateRequested += ViewUpdateRequested;
             _view.EditRequested += ViewEditRequested;
+            _view.CancelRequested += ViewCancelRequested;
         }
 
         private void ViewLoadedRequested()
@@ -95,6 +96,7 @@ namespace Org.Presenters
                 });
 
             _view.InitProducts(products, categories, manufactors, vendors, clients, employess);
+            _view.ShowEmptyProduct();
         }
 
         private void ViewAddRequested(ProductEditPe pe)
@@ -131,6 +133,7 @@ namespace Org.Presenters
             _productRepository.Add(product);
 
             ViewLoadedRequested();
+            _view.ShowEmptyProduct();
         }
 
         private void ViewUpdateRequested(ProductEditPe pe)
@@ -168,6 +171,7 @@ namespace Org.Presenters
             _productRepository.Update(product);
 
             ViewLoadedRequested();
+            _view.ShowEmptyProduct();
         }
 
         public void ViewEditRequested(int id)
@@ -196,6 +200,11 @@ namespace Org.Presenters
                     Employee = product.Employee.Id
                 });
             }
+        }
+
+        public void ViewCancelRequested()
+        {
+            _view.ShowEmptyProduct();
         }
     }
 }

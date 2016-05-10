@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.tsbEmployees = new System.Windows.Forms.ToolStripButton();
-            this.tsbVendors = new System.Windows.Forms.ToolStripButton();
-            this.tsbClients = new System.Windows.Forms.ToolStripButton();
-            this.tsbAddItem = new System.Windows.Forms.ToolStripButton();
-            this.tssbReports = new System.Windows.Forms.ToolStripSplitButton();
             this.gvCatalog = new System.Windows.Forms.DataGridView();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Manufactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +47,9 @@
             this.TotalReceivePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalSendPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbAddEdit = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bCancel = new System.Windows.Forms.Button();
+            this.bAddEdit = new System.Windows.Forms.Button();
             this.lDescription = new System.Windows.Forms.Label();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.lTotalSendPrice = new System.Windows.Forms.Label();
@@ -85,86 +80,36 @@
             this.tbNumber = new System.Windows.Forms.TextBox();
             this.lManufactor = new System.Windows.Forms.Label();
             this.lCategory = new System.Windows.Forms.Label();
-            this.bAddEdit = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tsbEmployees = new System.Windows.Forms.ToolStripButton();
+            this.tsbVendors = new System.Windows.Forms.ToolStripButton();
+            this.tsbClients = new System.Windows.Forms.ToolStripButton();
+            this.tssbReports = new System.Windows.Forms.ToolStripSplitButton();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCatalog)).BeginInit();
             this.gbAddEdit.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nTotalSendPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nTotalReceivePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReserveCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nSendCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReceiveCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPrice)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mainMenu
-            // 
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
-            this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(908, 24);
-            this.mainMenu.TabIndex = 0;
-            this.mainMenu.Text = "menuStrip1";
             // 
             // mainToolStrip
             // 
+            this.mainToolStrip.AutoSize = false;
             this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbEmployees,
             this.tsbVendors,
             this.tsbClients,
-            this.tsbAddItem,
             this.tssbReports});
-            this.mainToolStrip.Location = new System.Drawing.Point(0, 24);
+            this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mainToolStrip.Name = "mainToolStrip";
+            this.mainToolStrip.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.mainToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mainToolStrip.Size = new System.Drawing.Size(908, 25);
+            this.mainToolStrip.Size = new System.Drawing.Size(908, 64);
             this.mainToolStrip.TabIndex = 1;
-            // 
-            // tsbEmployees
-            // 
-            this.tsbEmployees.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEmployees.Image = ((System.Drawing.Image)(resources.GetObject("tsbEmployees.Image")));
-            this.tsbEmployees.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEmployees.Name = "tsbEmployees";
-            this.tsbEmployees.Size = new System.Drawing.Size(23, 22);
-            this.tsbEmployees.Text = "Сотрудники";
-            // 
-            // tsbVendors
-            // 
-            this.tsbVendors.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbVendors.Image = ((System.Drawing.Image)(resources.GetObject("tsbVendors.Image")));
-            this.tsbVendors.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbVendors.Name = "tsbVendors";
-            this.tsbVendors.Size = new System.Drawing.Size(23, 22);
-            this.tsbVendors.Text = "Поставщики";
-            // 
-            // tsbClients
-            // 
-            this.tsbClients.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbClients.Image = ((System.Drawing.Image)(resources.GetObject("tsbClients.Image")));
-            this.tsbClients.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbClients.Name = "tsbClients";
-            this.tsbClients.Size = new System.Drawing.Size(23, 22);
-            this.tsbClients.Text = "Клиенты";
-            // 
-            // tsbAddItem
-            // 
-            this.tsbAddItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAddItem.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddItem.Image")));
-            this.tsbAddItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAddItem.Name = "tsbAddItem";
-            this.tsbAddItem.Size = new System.Drawing.Size(23, 22);
-            this.tsbAddItem.Text = "Добавить новый товар";
-            // 
-            // tssbReports
-            // 
-            this.tssbReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tssbReports.Image = ((System.Drawing.Image)(resources.GetObject("tssbReports.Image")));
-            this.tssbReports.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tssbReports.Name = "tssbReports";
-            this.tssbReports.Size = new System.Drawing.Size(32, 22);
-            this.tssbReports.Text = "Отчеты";
             // 
             // gvCatalog
             // 
@@ -188,9 +133,9 @@
             this.ReserveCount,
             this.TotalReceivePrice,
             this.TotalSendPrice});
-            this.gvCatalog.Location = new System.Drawing.Point(0, 49);
+            this.gvCatalog.Location = new System.Drawing.Point(0, 91);
             this.gvCatalog.Name = "gvCatalog";
-            this.gvCatalog.Size = new System.Drawing.Size(324, 373);
+            this.gvCatalog.Size = new System.Drawing.Size(324, 362);
             this.gvCatalog.TabIndex = 2;
             this.gvCatalog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCatalog_CellClick);
             // 
@@ -231,17 +176,17 @@
             // 
             // ReceiveDate
             // 
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.ReceiveDate.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.ReceiveDate.DefaultCellStyle = dataGridViewCellStyle7;
             this.ReceiveDate.HeaderText = "Дата поставки";
             this.ReceiveDate.Name = "ReceiveDate";
             // 
             // SendDate
             // 
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.SendDate.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.SendDate.DefaultCellStyle = dataGridViewCellStyle8;
             this.SendDate.HeaderText = "Дата отпуска";
             this.SendDate.Name = "SendDate";
             // 
@@ -304,11 +249,21 @@
             this.gbAddEdit.Controls.Add(this.tbNumber);
             this.gbAddEdit.Controls.Add(this.lManufactor);
             this.gbAddEdit.Controls.Add(this.lCategory);
-            this.gbAddEdit.Location = new System.Drawing.Point(336, 52);
+            this.gbAddEdit.Location = new System.Drawing.Point(336, 86);
             this.gbAddEdit.Name = "gbAddEdit";
             this.gbAddEdit.Size = new System.Drawing.Size(560, 370);
             this.gbAddEdit.TabIndex = 3;
             this.gbAddEdit.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.bCancel);
+            this.flowLayoutPanel1.Controls.Add(this.bAddEdit);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(230, 335);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 29);
+            this.flowLayoutPanel1.TabIndex = 22;
             // 
             // bCancel
             // 
@@ -320,6 +275,16 @@
             this.bCancel.UseVisualStyleBackColor = true;
             this.bCancel.Visible = false;
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
+            // 
+            // bAddEdit
+            // 
+            this.bAddEdit.Location = new System.Drawing.Point(165, 3);
+            this.bAddEdit.Name = "bAddEdit";
+            this.bAddEdit.Size = new System.Drawing.Size(75, 23);
+            this.bAddEdit.TabIndex = 0;
+            this.bAddEdit.Text = "Добавить";
+            this.bAddEdit.UseVisualStyleBackColor = true;
+            this.bAddEdit.Click += new System.EventHandler(this.bAddEdit_Click);
             // 
             // lDescription
             // 
@@ -585,36 +550,58 @@
             this.lCategory.TabIndex = 1;
             this.lCategory.Text = "Категория товара";
             // 
-            // bAddEdit
+            // tsbEmployees
             // 
-            this.bAddEdit.Location = new System.Drawing.Point(165, 3);
-            this.bAddEdit.Name = "bAddEdit";
-            this.bAddEdit.Size = new System.Drawing.Size(75, 23);
-            this.bAddEdit.TabIndex = 0;
-            this.bAddEdit.Text = "Добавить";
-            this.bAddEdit.UseVisualStyleBackColor = true;
-            this.bAddEdit.Click += new System.EventHandler(this.bAddEdit_Click);
+            this.tsbEmployees.AutoSize = false;
+            this.tsbEmployees.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEmployees.Image = global::Org.Properties.Resources.Employees;
+            this.tsbEmployees.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEmployees.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEmployees.Name = "tsbEmployees";
+            this.tsbEmployees.Size = new System.Drawing.Size(64, 64);
+            this.tsbEmployees.Text = "Сотрудники";
             // 
-            // flowLayoutPanel1
+            // tsbVendors
             // 
-            this.flowLayoutPanel1.Controls.Add(this.bCancel);
-            this.flowLayoutPanel1.Controls.Add(this.bAddEdit);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(230, 335);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 29);
-            this.flowLayoutPanel1.TabIndex = 22;
+            this.tsbVendors.AutoSize = false;
+            this.tsbVendors.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbVendors.Image = global::Org.Properties.Resources.Vendors;
+            this.tsbVendors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbVendors.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVendors.Name = "tsbVendors";
+            this.tsbVendors.Size = new System.Drawing.Size(64, 64);
+            this.tsbVendors.Text = "Поставщики";
+            // 
+            // tsbClients
+            // 
+            this.tsbClients.AutoSize = false;
+            this.tsbClients.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbClients.Image = global::Org.Properties.Resources.Clients;
+            this.tsbClients.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbClients.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbClients.Name = "tsbClients";
+            this.tsbClients.Size = new System.Drawing.Size(64, 64);
+            this.tsbClients.Text = "Клиенты";
+            // 
+            // tssbReports
+            // 
+            this.tssbReports.AutoSize = false;
+            this.tssbReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tssbReports.Image = global::Org.Properties.Resources.Reports;
+            this.tssbReports.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tssbReports.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tssbReports.Name = "tssbReports";
+            this.tssbReports.Size = new System.Drawing.Size(78, 64);
+            this.tssbReports.Text = "Отчеты";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 434);
+            this.ClientSize = new System.Drawing.Size(908, 465);
             this.Controls.Add(this.gbAddEdit);
             this.Controls.Add(this.gvCatalog);
             this.Controls.Add(this.mainToolStrip);
-            this.Controls.Add(this.mainMenu);
-            this.MainMenuStrip = this.mainMenu;
             this.Name = "MainForm";
             this.Text = "Каталог";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -623,27 +610,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCatalog)).EndInit();
             this.gbAddEdit.ResumeLayout(false);
             this.gbAddEdit.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nTotalSendPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nTotalReceivePrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReserveCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nSendCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReceiveCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPrice)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.DataGridView gvCatalog;
         private System.Windows.Forms.ToolStripButton tsbEmployees;
         private System.Windows.Forms.ToolStripButton tsbVendors;
         private System.Windows.Forms.ToolStripButton tsbClients;
-        private System.Windows.Forms.ToolStripButton tsbAddItem;
         private System.Windows.Forms.ToolStripSplitButton tssbReports;
         private System.Windows.Forms.GroupBox gbAddEdit;
         private System.Windows.Forms.ComboBox cbManufactor;

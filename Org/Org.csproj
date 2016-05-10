@@ -130,6 +130,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Reports.png" />
+    <None Include="Resources\Employees.png" />
+    <None Include="Resources\Vendors.png" />
+    <None Include="Resources\Clients.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
