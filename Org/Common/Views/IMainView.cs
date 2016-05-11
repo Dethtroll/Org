@@ -16,5 +16,21 @@ namespace Org.Common.Views
         void InitProducts(IEnumerable<ProductIntexPe> products, IEnumerable<ProductCategoryIndexPe> categories, IEnumerable<ManufactorIndexPe> manufactors, IEnumerable<VendorIndexPe> vendors, IEnumerable<ClientIndexPe> clients, IEnumerable<EmployeeIndexPe> employess);
         void ShowProduct(ProductEditPe pe);
         void ShowEmptyProduct();
+
+        void ShowEmployeesWindow();
+    }
+
+    public interface IEmployeesView
+    {
+        Action Loaded { get; set; }
+        Action AddProduct { get; set; }
+        Action<EmployeeEditPe> AddRequested { get; set; }
+        Action<EmployeeEditPe> UpdateRequested { get; set; }
+        Action<int> EditRequested { get; set; }
+        Action CancelRequested { get; set; }
+
+        void InitEmployees(IEnumerable<EmployeeIndexPe> employees);
+        void ShowEmployee(EmployeeEditPe pe);
+        void ShowEmptyEmployee();
     }
 }

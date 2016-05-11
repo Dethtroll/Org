@@ -108,5 +108,12 @@ namespace Org.Repositories
             : base(context)
         {
         }
+        
+        public void Update(Employee employee)
+        {
+            var target = Items.First(x => x.Id == employee.Id);
+            _context.Entry(target).CurrentValues.SetValues(employee);
+            _context.SaveChanges();
+        }
     }
 }

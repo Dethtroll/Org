@@ -76,6 +76,7 @@
     <Compile Include="Common\Views\IMainView.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Pes\ProductIntexPe.cs" />
+    <Compile Include="Presenters\EmployeesFormPresenter.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Views\EmployeesForm.cs">
       <SubType>Form</SubType>

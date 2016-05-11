@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.Common.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,11 @@ namespace Org
         [STAThread]
         static void Main()
         {
+            var context = new OrgContext();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(context));
         }
     }
 }

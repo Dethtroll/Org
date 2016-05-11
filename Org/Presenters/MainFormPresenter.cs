@@ -63,7 +63,7 @@ namespace Org.Presenters
                     Manufactor = x.Manufactor.Name,
                     Vendor = x.Vendor.Name,
                     Client = x.Client.Name,
-                    Employee = x.Employee.Name
+                    Employee = string.Format("{0} {1} {2}", x.Employee.LastName, x.Employee.FirstName, x.Employee.MiddleName)
                 })
                 .ToList();
             var categories = _categoryRepository.Get()
@@ -92,7 +92,7 @@ namespace Org.Presenters
                 .Select(x => new EmployeeIndexPe
                 {
                     Id = x.Id,
-                    Name = x.Name
+                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName)
                 });
 
             _view.InitProducts(products, categories, manufactors, vendors, clients, employess);

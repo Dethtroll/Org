@@ -7,11 +7,14 @@ using System.Collections.Generic;
 using Org.Pes;
 using Org.Common.Repositories;
 using Org.Domain;
+using Org.Views;
 
 namespace Org
 {
     public partial class MainForm : Form, IMainView
     {
+        protected readonly OrgContext _context;
+
         protected bool _editMode = false;
         public bool EditMode
         {
@@ -30,12 +33,13 @@ namespace Org
         public Action<ProductEditPe> UpdateRequested { get; set; }
         public Action<int> EditRequested { get; set; }
         public Action CancelRequested { get; set; }
+                
 
-        public MainForm()
+        public MainForm(OrgContext context)
         {
             InitializeComponent();
 
-            var context = new OrgContext();
+            _context = context;
             new MainFormPresenter(
                 this, 
                 new ProductRepository(context),
@@ -151,6 +155,13 @@ namespace Org
             rtbDescription.Text = string.Empty;
         }
 
+        public void ShowEmployeesWindow()
+        {
+            var employeesForm = new EmployeesForm(_context);
+
+            employeesForm.ShowDialog(this);
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Loaded();
@@ -158,52 +169,36 @@ namespace Org
 
         private void bAddEdit_Click(object sender, EventArgs e)
         {
+
+            var pe = new ProductEditPe
+            {
+                Category = ((ProductCategoryIndexPe)cbCategory.SelectedItem).Id,
+                Manufactor = ((ManufactorIndexPe)cbManufactor.SelectedItem).Id,
+                Price = nPrice.Value,
+                Number = tbNumber.Text,
+                Vendor = ((VendorIndexPe)cbVendor.SelectedItem).Id,
+                Client = ((ClientIndexPe)cbClient.SelectedItem).Id,
+                Employee = ((EmployeeIndexPe)cbEmployee.SelectedItem).Id,
+                ReceiveDate = dtpReceiveDate.Value,
+                SendDate = dtpSendDate.Value,
+                ReceiveCount = (int)nReceiveCount.Value,
+                SendCount = (int)nSendCount.Value,
+                ReserveCount = (int)nReserveCount.Value,
+                TotalReceivePrice = nTotalReceivePrice.Value,
+                TotalSendPrice = nTotalSendPrice.Value,
+                Description = rtbDescription.Text
+            };
+
             if (EditMode)
             {
-                var pe = new ProductEditPe
-                {
-                    Id = (int)bAddEdit.Tag,
-                    Category = ((ProductCategoryIndexPe)cbCategory.SelectedItem).Id,
-                    Manufactor = ((ManufactorIndexPe)cbManufactor.SelectedItem).Id,
-                    Price = nPrice.Value,
-                    Number = tbNumber.Text,
-                    Vendor = ((VendorIndexPe)cbVendor.SelectedItem).Id,
-                    Client = ((ClientIndexPe)cbClient.SelectedItem).Id,
-                    Employee = ((EmployeeIndexPe)cbEmployee.SelectedItem).Id,
-                    ReceiveDate = dtpReceiveDate.Value,
-                    SendDate = dtpSendDate.Value,
-                    ReceiveCount = (int)nReceiveCount.Value,
-                    SendCount = (int)nSendCount.Value,
-                    ReserveCount = (int)nReserveCount.Value,
-                    TotalReceivePrice = nTotalReceivePrice.Value,
-                    TotalSendPrice = nTotalSendPrice.Value,
-                    Description = rtbDescription.Text
-                };
-
+                pe.Id = (int)bAddEdit.Tag;
                 UpdateRequested(pe);
                 
                 EditMode = false;
             }
             else
             {
-                AddRequested(new ProductEditPe
-                {
-                    Category = ((ProductCategoryIndexPe)cbCategory.SelectedItem).Id,
-                    Manufactor = ((ManufactorIndexPe)cbManufactor.SelectedItem).Id,
-                    Price = nPrice.Value,
-                    Number = tbNumber.Text,
-                    Vendor = ((VendorIndexPe)cbVendor.SelectedItem).Id,
-                    Client = ((ClientIndexPe)cbClient.SelectedItem).Id,
-                    Employee = ((EmployeeIndexPe)cbEmployee.SelectedItem).Id,
-                    ReceiveDate = dtpReceiveDate.Value,
-                    SendDate = dtpSendDate.Value,
-                    ReceiveCount = (int)nReceiveCount.Value,
-                    SendCount = (int)nSendCount.Value,
-                    ReserveCount = (int)nReserveCount.Value,
-                    TotalReceivePrice = nTotalReceivePrice.Value,
-                    TotalSendPrice = nTotalSendPrice.Value,
-                    Description = rtbDescription.Text
-                });
+                AddRequested(pe);
             }
         }
 
@@ -223,6 +218,11 @@ namespace Org
         {
             EditMode = false;
             CancelRequested();
+        }
+
+        private void tsbEmployees_Click(object sender, EventArgs e)
+        {
+            ShowEmployeesWindow();
         }
     }
 }
