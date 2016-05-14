@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.tsbEmployees = new System.Windows.Forms.ToolStripButton();
             this.tsbVendors = new System.Windows.Forms.ToolStripButton();
@@ -99,6 +99,7 @@
             // mainToolStrip
             // 
             this.mainToolStrip.AutoSize = false;
+            this.mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbEmployees,
             this.tsbVendors,
@@ -145,6 +146,7 @@
             this.tsbClients.Name = "tsbClients";
             this.tsbClients.Size = new System.Drawing.Size(64, 64);
             this.tsbClients.Text = "Клиенты";
+            this.tsbClients.Click += new System.EventHandler(this.tsbClients_Click);
             // 
             // tssbReports
             // 
@@ -222,17 +224,17 @@
             // 
             // ReceiveDate
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ReceiveDate.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ReceiveDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ReceiveDate.HeaderText = "Дата поставки";
             this.ReceiveDate.Name = "ReceiveDate";
             // 
             // SendDate
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.SendDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.SendDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.SendDate.HeaderText = "Дата отпуска";
             this.SendDate.Name = "SendDate";
             // 

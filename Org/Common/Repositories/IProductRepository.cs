@@ -34,6 +34,7 @@ namespace Org.Common.Repositories
 
     public interface IClientRepository : IRepository<Client>
     {
+        void Update(Client company);
     }
 
     public interface IEmployeeRepository : IRepository<Employee>

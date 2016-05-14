@@ -107,6 +107,13 @@ namespace Org.Repositories
             : base(context)
         {
         }
+
+        public void Update(Client client)
+        {
+            var target = Items.First(x => x.Id == client.Id);
+            _context.Entry(target).CurrentValues.SetValues(client);
+            _context.SaveChanges();
+        }
     }
 
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository, IDisposable

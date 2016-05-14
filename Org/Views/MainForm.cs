@@ -169,6 +169,13 @@ namespace Org
             vendorsForm.ShowDialog(this);
         }
 
+        public void ShowClientsWindow()
+        {
+            var clientsForm = new ClinetsForm(_context);
+
+            clientsForm.ShowDialog(this);
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Loaded();
@@ -235,6 +242,11 @@ namespace Org
         private void tsbVendors_Click(object sender, EventArgs e)
         {
             ShowVendorsWindow();
+        }
+
+        private void tsbClients_Click(object sender, EventArgs e)
+        {
+            ShowClientsWindow();
         }
     }
 }

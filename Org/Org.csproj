@@ -76,8 +76,16 @@
     <Compile Include="Common\Views\IMainView.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Pes\ProductIntexPe.cs" />
+    <Compile Include="Presenters\ClientFormPresenter.cs" />
     <Compile Include="Presenters\EmployeesFormPresenter.cs" />
+    <Compile Include="Presenters\VendorFormPresenter.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Views\ClinetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClinetsForm.Designer.cs">
+      <DependentUpon>ClinetsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +107,9 @@
     <Compile Include="Views\VendorsForm.Designer.cs">
       <DependentUpon>VendorsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ClinetsForm.resx">
+      <DependentUpon>ClinetsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
