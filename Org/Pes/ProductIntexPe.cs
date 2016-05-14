@@ -158,4 +158,16 @@ namespace Org.Pes
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
     }
+
+    public class CompanyIndexPe
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+    }
+    public class CompanyEditPe : CompanyIndexPe
+    {
+    }
 }

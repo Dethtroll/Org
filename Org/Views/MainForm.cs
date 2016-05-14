@@ -162,6 +162,13 @@ namespace Org
             employeesForm.ShowDialog(this);
         }
 
+        public void ShowVendorsWindow()
+        {
+            var vendorsForm = new VendorsForm(_context);
+
+            vendorsForm.ShowDialog(this);
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Loaded();
@@ -223,6 +230,11 @@ namespace Org
         private void tsbEmployees_Click(object sender, EventArgs e)
         {
             ShowEmployeesWindow();
+        }
+
+        private void tsbVendors_Click(object sender, EventArgs e)
+        {
+            ShowVendorsWindow();
         }
     }
 }

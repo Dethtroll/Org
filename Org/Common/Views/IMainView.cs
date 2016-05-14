@@ -33,4 +33,18 @@ namespace Org.Common.Views
         void ShowEmployee(EmployeeEditPe pe);
         void ShowEmptyEmployee();
     }
+    
+    public interface ICompaniesView
+    {
+        Action Loaded { get; set; }
+        Action AddCompany { get; set; }
+        Action<CompanyEditPe> AddRequested { get; set; }
+        Action<CompanyEditPe> UpdateRequested { get; set; }
+        Action<int> EditRequested { get; set; }
+        Action CancelRequested { get; set; }
+
+        void InitCompanies(IEnumerable<CompanyIndexPe> companies);
+        void ShowCompany(CompanyEditPe pe);
+        void ShowEmptyCompany();
+    }
 }

@@ -92,6 +92,13 @@ namespace Org.Repositories
             : base(context)
         {
         }
+        
+        public void Update(Vendor vendor)
+        {
+            var target = Items.First(x => x.Id == vendor.Id);
+            _context.Entry(target).CurrentValues.SetValues(vendor);
+            _context.SaveChanges();
+        }
     }
 
     public class ClientRepository : Repository<Client>, IClientRepository, IDisposable

@@ -29,6 +29,7 @@ namespace Org.Common.Repositories
 
     public interface IVendorRepository : IRepository<Vendor>
     {
+        void Update(Vendor vendor);
     }
 
     public interface IClientRepository : IRepository<Client>

@@ -133,6 +133,7 @@
             this.tsbVendors.Name = "tsbVendors";
             this.tsbVendors.Size = new System.Drawing.Size(64, 64);
             this.tsbVendors.Text = "Поставщики";
+            this.tsbVendors.Click += new System.EventHandler(this.tsbVendors_Click);
             // 
             // tsbClients
             // 
