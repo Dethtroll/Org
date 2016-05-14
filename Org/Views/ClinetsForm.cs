@@ -1,4 +1,5 @@
 ﻿using Org.Common.Repositories;
+using Org.Common.Services;
 using Org.Common.Views;
 using Org.Pes;
 using Org.Presenters;
@@ -30,11 +31,11 @@ namespace Org.Views
         public Action Loaded { get; set; }
         public Action<CompanyEditPe> UpdateRequested { get; set; }
 
-        public ClinetsForm(OrgContext context)
+        public ClinetsForm(OrgContext context, IUpdateService updateService)
         {
             InitializeComponent();
 
-            new ClientFormPresenter(this, new ClientRepository(context));
+            new ClientFormPresenter(this, new ClientRepository(context, updateService));
         }
 
         public void InitCompanies(IEnumerable<CompanyIndexPe> employees)

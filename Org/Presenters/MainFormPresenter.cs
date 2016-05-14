@@ -5,6 +5,7 @@ using System.Linq;
 using Org.Pes;
 using Org.Domain;
 using Org.Repositories;
+using Org.Common.Services;
 
 namespace Org.Presenters
 {
@@ -21,6 +22,8 @@ namespace Org.Presenters
 
         public MainFormPresenter(
             IMainView view,
+
+            IUpdateService updateService,
 
             IProductRepository productRepository,
             IProductCategoryRepository categoryRepository,
@@ -42,6 +45,13 @@ namespace Org.Presenters
             _view.UpdateRequested += ViewUpdateRequested;
             _view.EditRequested += ViewEditRequested;
             _view.CancelRequested += ViewCancelRequested;
+
+            updateService.ClientAdded += UpdateService_ClientAdded;
+            updateService.ClientUpdated += UpdateService_ClientUpdated;
+            updateService.VendorAdded += UpdateService_VendorAdded;
+            updateService.VendorUpdated += UpdateService_VendorUpdated;
+            updateService.EmployeeAdded += UpdateService_EmployeeAdded;
+            updateService.EmployeeUpdated += UpdateService_EmployeeUpdated;
         }
 
         private void ViewLoadedRequested()
@@ -174,7 +184,7 @@ namespace Org.Presenters
             _view.ShowEmptyProduct();
         }
 
-        public void ViewEditRequested(int id)
+        private void ViewEditRequested(int id)
         {
             var product = _productRepository.FirstOrDefault(p => p.Id == id);
             if (product != null)
@@ -202,9 +212,75 @@ namespace Org.Presenters
             }
         }
 
-        public void ViewCancelRequested()
+        private void ViewCancelRequested()
         {
             _view.ShowEmptyProduct();
+        }
+
+        private void UpdateService_ClientAdded(Client obj)
+        {
+            var clients = _clientRepository.Get()
+                .Select(x => new ClientIndexPe
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                });
+            _view.InitClients(clients);
+        }
+
+        private void UpdateService_ClientUpdated(Client obj)
+        {
+            var clients = _clientRepository.Get()
+                .Select(x => new ClientIndexPe
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                });
+            _view.InitClients(clients);
+        }
+
+        private void UpdateService_VendorAdded(Vendor obj)
+        {
+            var vendors = _vendorRepository.Get()
+                .Select(x => new VendorIndexPe
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                });
+            _view.InitVendors(vendors);
+        }
+
+        private void UpdateService_VendorUpdated(Vendor obj)
+        {
+            var vendors = _vendorRepository.Get()
+                .Select(x => new VendorIndexPe
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                });
+            _view.InitVendors(vendors);
+        }
+
+        private void UpdateService_EmployeeAdded(Employee obj)
+        {
+            var employess = _employeeRepository.Get()
+                .Select(x => new EmployeeIndexPe
+                {
+                    Id = x.Id,
+                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName)
+                });
+            _view.InitEmployees(employess);
+        }
+
+        private void UpdateService_EmployeeUpdated(Employee obj)
+        {
+            var employess = _employeeRepository.Get()
+                .Select(x => new EmployeeIndexPe
+                {
+                    Id = x.Id,
+                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName)
+                });
+            _view.InitEmployees(employess);
         }
     }
 }

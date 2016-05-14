@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Org.Pes;
 using Org.Common.Repositories;
 using Org.Repositories;
+using Org.Common.Services;
 
 namespace Org.Views
 {
@@ -30,11 +31,11 @@ namespace Org.Views
         public Action Loaded { get; set; }
         public Action<EmployeeEditPe> UpdateRequested { get; set; }
 
-        public EmployeesForm(OrgContext context)
+        public EmployeesForm(OrgContext context, IUpdateService updateService)
         {
             InitializeComponent();
 
-            new EmployeesFormPresenter(this, new EmployeeRepository(context));
+            new EmployeesFormPresenter(this, new EmployeeRepository(context, updateService));
         }
         
         public void InitEmployees(IEnumerable<EmployeeIndexPe> employees)

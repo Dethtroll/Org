@@ -17,7 +17,15 @@ namespace Org.Common.Views
         void ShowProduct(ProductEditPe pe);
         void ShowEmptyProduct();
 
+        void InitCategories(IEnumerable<ProductCategoryIndexPe> categories);
+        void InitManufactors(IEnumerable<ManufactorIndexPe> manufactors);
+        void InitVendors(IEnumerable<VendorIndexPe> vendors);
+        void InitClients(IEnumerable<ClientIndexPe> clients);
+        void InitEmployees(IEnumerable<EmployeeIndexPe> employess);
+
         void ShowEmployeesWindow();
+        void ShowVendorsWindow();
+        void ShowClientsWindow();
     }
 
     public interface IEmployeesView

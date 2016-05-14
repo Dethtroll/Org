@@ -8,14 +8,17 @@ using Org.Pes;
 using Org.Common.Repositories;
 using Org.Domain;
 using Org.Views;
+using Org.Common.Services;
 
 namespace Org
 {
     public partial class MainForm : Form, IMainView
     {
         protected readonly OrgContext _context;
+        protected readonly IUpdateService _updateService;
 
         protected bool _editMode = false;
+
         public bool EditMode
         {
             get { return _editMode; }
@@ -35,19 +38,24 @@ namespace Org
         public Action CancelRequested { get; set; }
                 
 
-        public MainForm(OrgContext context)
+        public MainForm(OrgContext context, IUpdateService updateService)
         {
             InitializeComponent();
 
             _context = context;
+            _updateService = updateService;
             new MainFormPresenter(
                 this, 
-                new ProductRepository(context),
-                new ProductCategoryRepository(context),
-                new ManufactorRepository(context),
-                new VendorRepository(context),
-                new ClientRepository(context),
-                new EmployeeRepository(context));
+
+                _updateService,
+
+                new ProductRepository(context, updateService),
+                new ProductCategoryRepository(context, updateService),
+                new ManufactorRepository(context, updateService),
+                new VendorRepository(context, updateService),
+                new ClientRepository(context, updateService),
+                new EmployeeRepository(context, updateService)
+            );
         }
 
         public void InitProducts(
@@ -65,36 +73,63 @@ namespace Org
                 AddProductRow(product);
             }
 
+            InitCategories(categories);
+            InitManufactors(manufactors);
+            InitVendors(vendors);
+            InitClients(clients);
+            InitEmployees(employess);
+
+            if (EditMode && bAddEdit.Tag != null)
+            {
+                EditRequested((int)bAddEdit.Tag);
+            }
+        }
+
+        public void InitCategories(IEnumerable<ProductCategoryIndexPe> categories)
+        {
             cbCategory.Items.Clear();
             foreach (var category in categories)
             {
                 cbCategory.Items.Add(category);
             }
+        }
 
+        public void InitManufactors(IEnumerable<ManufactorIndexPe> manufactors)
+        {
             cbManufactor.Items.Clear();
             foreach (var manufactor in manufactors)
             {
                 cbManufactor.Items.Add(manufactor);
             }
+        }
 
+        public void InitVendors(IEnumerable<VendorIndexPe> vendors)
+        {
             cbVendor.Items.Clear();
             foreach (var vendor in vendors)
             {
                 cbVendor.Items.Add(vendor);
             }
+        }
 
+        public void InitClients(IEnumerable<ClientIndexPe> clients)
+        {
             cbClient.Items.Clear();
             foreach (var client in clients)
             {
                 cbClient.Items.Add(client);
             }
+        }
 
+        public void InitEmployees(IEnumerable<EmployeeIndexPe> employess)
+        {
             cbEmployee.Items.Clear();
             foreach (var employee in employess)
             {
                 cbEmployee.Items.Add(employee);
             }
         }
+
 
         protected void AddProductRow(ProductIntexPe product)
         {
@@ -157,21 +192,21 @@ namespace Org
 
         public void ShowEmployeesWindow()
         {
-            var employeesForm = new EmployeesForm(_context);
+            var employeesForm = new EmployeesForm(_context, _updateService);
 
             employeesForm.ShowDialog(this);
         }
 
         public void ShowVendorsWindow()
         {
-            var vendorsForm = new VendorsForm(_context);
+            var vendorsForm = new VendorsForm(_context, _updateService);
 
             vendorsForm.ShowDialog(this);
         }
 
         public void ShowClientsWindow()
         {
-            var clientsForm = new ClinetsForm(_context);
+            var clientsForm = new ClinetsForm(_context, _updateService);
 
             clientsForm.ShowDialog(this);
         }

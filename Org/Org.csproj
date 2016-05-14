@@ -79,7 +79,9 @@
     <Compile Include="Presenters\ClientFormPresenter.cs" />
     <Compile Include="Presenters\EmployeesFormPresenter.cs" />
     <Compile Include="Presenters\VendorFormPresenter.cs" />
+    <Compile Include="Common\Services\IUpdateService.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Services\UpdateService.cs" />
     <Compile Include="Views\ClinetsForm.cs">
       <SubType>Form</SubType>
     </Compile>
