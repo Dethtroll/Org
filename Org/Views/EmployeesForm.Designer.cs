@@ -84,41 +84,49 @@
             this.dgEmployees.Size = new System.Drawing.Size(292, 237);
             this.dgEmployees.TabIndex = 0;
             this.dgEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEmployees_CellClick);
+            this.dgEmployees.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgEmployees_UserDeletedRow);
             // 
             // Fio
             // 
             this.Fio.HeaderText = "Ф. И. О.";
             this.Fio.Name = "Fio";
+            this.Fio.ReadOnly = true;
             // 
             // Address
             // 
             this.Address.HeaderText = "Адрес";
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             // 
             // Phone
             // 
             this.Phone.HeaderText = "Телефон";
             this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
             // 
             // Birthday
             // 
             this.Birthday.HeaderText = "Дата рождения";
             this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
             // 
             // FirstWorkDay
             // 
             this.FirstWorkDay.HeaderText = "Дата найма";
             this.FirstWorkDay.Name = "FirstWorkDay";
+            this.FirstWorkDay.ReadOnly = true;
             // 
             // Position
             // 
             this.Position.HeaderText = "Должность";
             this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
             // 
             // Degree
             // 
             this.Degree.HeaderText = "Образование";
             this.Degree.Name = "Degree";
+            this.Degree.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -166,6 +174,7 @@
             this.bCancel.TabIndex = 4;
             this.bCancel.Text = "Отмена";
             this.bCancel.UseVisualStyleBackColor = true;
+            this.bCancel.Visible = false;
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
             // bAddSave

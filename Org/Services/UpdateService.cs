@@ -13,6 +13,9 @@ namespace Org.Services
         public Action<Client> ClientUpdated { get; set; }
         public Action<Vendor> VendorUpdated { get; set; }
         public Action<Employee> EmployeeUpdated { get; set; }
+        public Action<Client> ClientDeleted { get; set; }
+        public Action<Vendor> VendorDeleted { get; set; }
+        public Action<Employee> EmployeeDeleted { get; set; }
 
         public void Add(Client client)
         {
@@ -38,6 +41,18 @@ namespace Org.Services
         public void Update(Employee employee)
         {
             EmployeeUpdated?.Invoke(employee);
+        }
+        public void Delete(Client client)
+        {
+            ClientDeleted?.Invoke(client);
+        }
+        public void Delete(Vendor vendor)
+        {
+            VendorDeleted?.Invoke(vendor);
+        }
+        public void Delete(Employee employee)
+        {
+            EmployeeDeleted?.Invoke(employee);
         }
 
         static UpdateService()

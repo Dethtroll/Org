@@ -48,10 +48,13 @@ namespace Org.Presenters
 
             updateService.ClientAdded += UpdateService_ClientAdded;
             updateService.ClientUpdated += UpdateService_ClientUpdated;
+            updateService.ClientDeleted += UpdateService_ClientDeleted;
             updateService.VendorAdded += UpdateService_VendorAdded;
             updateService.VendorUpdated += UpdateService_VendorUpdated;
+            updateService.VendorDeleted += UpdateService_VendorDeleted;
             updateService.EmployeeAdded += UpdateService_EmployeeAdded;
             updateService.EmployeeUpdated += UpdateService_EmployeeUpdated;
+            updateService.EmployeeDeleted += UpdateService_EmployeeDeleted;
         }
 
         private void ViewLoadedRequested()
@@ -273,6 +276,39 @@ namespace Org.Presenters
         }
 
         private void UpdateService_EmployeeUpdated(Employee obj)
+        {
+            var employess = _employeeRepository.Get()
+                .Select(x => new EmployeeIndexPe
+                {
+                    Id = x.Id,
+                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName)
+                });
+            _view.InitEmployees(employess);
+        }
+
+        public void UpdateService_ClientDeleted(Client obj)
+        {
+            var clients = _clientRepository.Get()
+                .Select(x => new ClientIndexPe
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                });
+            _view.InitClients(clients);
+        }
+
+        public void UpdateService_VendorDeleted(Vendor obj)
+        {
+            var vendors = _vendorRepository.Get()
+                .Select(x => new VendorIndexPe
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                });
+            _view.InitVendors(vendors);
+        }
+
+        public void UpdateService_EmployeeDeleted(Employee obj)
         {
             var employess = _employeeRepository.Get()
                 .Select(x => new EmployeeIndexPe

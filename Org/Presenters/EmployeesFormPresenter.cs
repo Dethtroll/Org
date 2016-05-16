@@ -25,6 +25,7 @@ namespace Org.Presenters
             _view.AddRequested += ViewAddRequested;
             _view.UpdateRequested += ViewUpdateRequested;
             _view.EditRequested += ViewEditRequested;
+            _view.DeleteRequested += ViewDeleteRequested;
             _view.CancelRequested += ViewCancelRequested;
         }
 
@@ -106,6 +107,15 @@ namespace Org.Presenters
                     Position = employee.Position,
                     Degree = employee.Degree
                 });
+            }
+        }
+
+        public void ViewDeleteRequested(int id)
+        {
+            var employee = _employeeRepository.FirstOrDefault(p => p.Id == id);
+            if (employee != null)
+            {
+                _employeeRepository.Delete(employee);
             }
         }
 

@@ -160,6 +160,7 @@
             this.dgvCompanies.Size = new System.Drawing.Size(409, 320);
             this.dgvCompanies.TabIndex = 3;
             this.dgvCompanies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCompanies_CellClick);
+            this.dgvCompanies.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvCompanies_UserDeletedRow);
             // 
             // FullName
             // 

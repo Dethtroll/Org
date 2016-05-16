@@ -25,6 +25,7 @@ namespace Org.Presenters
             _view.AddRequested += ViewAddRequested;
             _view.UpdateRequested += ViewUpdateRequested;
             _view.EditRequested += ViewEditRequested;
+            _view.DeleteRequested += ViewDeleteRequested;
             _view.CancelRequested += ViewCancelRequested;
         }
 
@@ -84,6 +85,15 @@ namespace Org.Presenters
                     Address = company.Address,
                     Phone = company.Phone,
                 });
+            }
+        }
+
+        public void ViewDeleteRequested(int id)
+        {
+            var employee = _vendorRepository.FirstOrDefault(p => p.Id == id);
+            if (employee != null)
+            {
+                _vendorRepository.Delete(employee);
             }
         }
 

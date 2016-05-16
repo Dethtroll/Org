@@ -28,6 +28,7 @@ namespace Org.Views
         public Action<CompanyEditPe> AddRequested { get; set; }
         public Action CancelRequested { get; set; }
         public Action<int> EditRequested { get; set; }
+        public Action<int> DeleteRequested { get; set; }
         public Action Loaded { get; set; }
         public Action<CompanyEditPe> UpdateRequested { get; set; }
 
@@ -114,6 +115,16 @@ namespace Org.Views
         {
             EditMode = false;
             CancelRequested();
+        }
+
+        private void dgvCompanies_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            var row = (int)e.Row.Tag;
+            DeleteRequested(row);
+            if (bAddSave.Tag != null && row == (int)bAddSave.Tag)
+            {
+                EditMode = false;
+            }
         }
     }
 }

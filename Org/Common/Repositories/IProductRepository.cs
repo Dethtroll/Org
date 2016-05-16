@@ -12,6 +12,8 @@ namespace Org.Common.Repositories
         T FirstOrDefault(Expression<Func<T, bool>> predicate);
 
         T Add(T product);
+
+        void Delete(T product);
     }
 
     public interface IProductRepository : IRepository<Product>

@@ -219,6 +219,15 @@ namespace Org
         private void bAddEdit_Click(object sender, EventArgs e)
         {
 
+            if (cbCategory.SelectedItem == null ||
+                cbManufactor.SelectedItem == null ||
+                cbVendor.SelectedItem == null ||
+                cbClient.SelectedItem == null ||
+                cbEmployee.SelectedItem == null)
+            {
+                return;
+            }
+
             var pe = new ProductEditPe
             {
                 Category = ((ProductCategoryIndexPe)cbCategory.SelectedItem).Id,

@@ -53,6 +53,12 @@ namespace Org.Repositories
 
             return result;
         }
+
+        public virtual void Delete(T product)
+        {
+            Items.Remove(product);
+            _context.SaveChanges();
+        }
     }
 
     public class ProductRepository : Repository<Product>, IProductRepository, IDisposable
@@ -111,6 +117,13 @@ namespace Org.Repositories
 
             _updateService.Update(vendor);
         }
+
+        public override void Delete(Vendor vendor)
+        {
+            base.Delete(vendor);
+
+            _updateService.Delete(vendor);
+        }
     }
 
     public class ClientRepository : Repository<Client>, IClientRepository, IDisposable
@@ -137,6 +150,13 @@ namespace Org.Repositories
 
             _updateService.Update(client);
         }
+
+        public override void Delete(Client client)
+        {
+            base.Delete(client);
+
+            _updateService.Delete(client);
+        }
     }
 
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository, IDisposable
@@ -162,6 +182,13 @@ namespace Org.Repositories
             _context.SaveChanges();
 
             _updateService.Update(employee);
+        }
+
+        public override void Delete(Employee employee)
+        {
+            base.Delete(employee);
+
+            _updateService.Delete(employee);
         }
     }
 }

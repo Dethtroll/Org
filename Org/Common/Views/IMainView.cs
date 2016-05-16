@@ -35,6 +35,7 @@ namespace Org.Common.Views
         Action<EmployeeEditPe> AddRequested { get; set; }
         Action<EmployeeEditPe> UpdateRequested { get; set; }
         Action<int> EditRequested { get; set; }
+        Action<int> DeleteRequested { get; set; }
         Action CancelRequested { get; set; }
 
         void InitEmployees(IEnumerable<EmployeeIndexPe> employees);
@@ -49,6 +50,7 @@ namespace Org.Common.Views
         Action<CompanyEditPe> AddRequested { get; set; }
         Action<CompanyEditPe> UpdateRequested { get; set; }
         Action<int> EditRequested { get; set; }
+        Action<int> DeleteRequested { get; set; }
         Action CancelRequested { get; set; }
 
         void InitCompanies(IEnumerable<CompanyIndexPe> companies);

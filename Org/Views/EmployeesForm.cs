@@ -28,6 +28,7 @@ namespace Org.Views
         public Action<EmployeeEditPe> AddRequested { get; set; }
         public Action CancelRequested { get; set; }
         public Action<int> EditRequested { get; set; }
+        public Action<int> DeleteRequested { get; set; }
         public Action Loaded { get; set; }
         public Action<EmployeeEditPe> UpdateRequested { get; set; }
 
@@ -129,6 +130,16 @@ namespace Org.Views
                 EditRequested(row);
                 bAddSave.Tag = row;
                 EditMode = true;
+            }
+        }
+
+        private void dgEmployees_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            var row = (int)e.Row.Tag;
+            DeleteRequested(row);
+            if (bAddSave.Tag != null && row == (int)bAddSave.Tag)
+            {
+                EditMode = false;
             }
         }
 
