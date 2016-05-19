@@ -23,10 +23,12 @@ namespace Org.Common.Repositories
 
     public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
+        void Update(ProductCategory product);
     }
 
     public interface IManufactorRepository : IRepository<Manufactor>
     {
+        void Update(Manufactor vendor);
     }
 
     public interface IVendorRepository : IRepository<Vendor>

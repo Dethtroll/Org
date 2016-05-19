@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.tsbEmployees = new System.Windows.Forms.ToolStripButton();
-            this.tsbVendors = new System.Windows.Forms.ToolStripButton();
-            this.tsbClients = new System.Windows.Forms.ToolStripButton();
-            this.tssbReports = new System.Windows.Forms.ToolStripSplitButton();
             this.gvCatalog = new System.Windows.Forms.DataGridView();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Manufactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +80,12 @@
             this.tbNumber = new System.Windows.Forms.TextBox();
             this.lManufactor = new System.Windows.Forms.Label();
             this.lCategory = new System.Windows.Forms.Label();
+            this.tsbEmployees = new System.Windows.Forms.ToolStripButton();
+            this.tsbVendors = new System.Windows.Forms.ToolStripButton();
+            this.tsbClients = new System.Windows.Forms.ToolStripButton();
+            this.tsManufactors = new System.Windows.Forms.ToolStripButton();
+            this.tsProductCategories = new System.Windows.Forms.ToolStripButton();
+            this.tssbReports = new System.Windows.Forms.ToolStripSplitButton();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCatalog)).BeginInit();
             this.gbAddEdit.SuspendLayout();
@@ -104,6 +106,8 @@
             this.tsbEmployees,
             this.tsbVendors,
             this.tsbClients,
+            this.tsManufactors,
+            this.tsProductCategories,
             this.tssbReports});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mainToolStrip.Name = "mainToolStrip";
@@ -111,53 +115,6 @@
             this.mainToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mainToolStrip.Size = new System.Drawing.Size(908, 64);
             this.mainToolStrip.TabIndex = 1;
-            // 
-            // tsbEmployees
-            // 
-            this.tsbEmployees.AutoSize = false;
-            this.tsbEmployees.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEmployees.Image = global::Org.Properties.Resources.Employees;
-            this.tsbEmployees.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbEmployees.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEmployees.Name = "tsbEmployees";
-            this.tsbEmployees.Size = new System.Drawing.Size(64, 64);
-            this.tsbEmployees.Text = "Сотрудники";
-            this.tsbEmployees.Click += new System.EventHandler(this.tsbEmployees_Click);
-            // 
-            // tsbVendors
-            // 
-            this.tsbVendors.AutoSize = false;
-            this.tsbVendors.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbVendors.Image = global::Org.Properties.Resources.Vendors;
-            this.tsbVendors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbVendors.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbVendors.Name = "tsbVendors";
-            this.tsbVendors.Size = new System.Drawing.Size(64, 64);
-            this.tsbVendors.Text = "Поставщики";
-            this.tsbVendors.Click += new System.EventHandler(this.tsbVendors_Click);
-            // 
-            // tsbClients
-            // 
-            this.tsbClients.AutoSize = false;
-            this.tsbClients.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbClients.Image = global::Org.Properties.Resources.Clients;
-            this.tsbClients.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbClients.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbClients.Name = "tsbClients";
-            this.tsbClients.Size = new System.Drawing.Size(64, 64);
-            this.tsbClients.Text = "Клиенты";
-            this.tsbClients.Click += new System.EventHandler(this.tsbClients_Click);
-            // 
-            // tssbReports
-            // 
-            this.tssbReports.AutoSize = false;
-            this.tssbReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tssbReports.Image = global::Org.Properties.Resources.Reports;
-            this.tssbReports.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tssbReports.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tssbReports.Name = "tssbReports";
-            this.tssbReports.Size = new System.Drawing.Size(78, 64);
-            this.tssbReports.Text = "Отчеты";
             // 
             // gvCatalog
             // 
@@ -224,17 +181,17 @@
             // 
             // ReceiveDate
             // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.ReceiveDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ReceiveDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.ReceiveDate.HeaderText = "Дата поставки";
             this.ReceiveDate.Name = "ReceiveDate";
             // 
             // SendDate
             // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.SendDate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.SendDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.SendDate.HeaderText = "Дата отпуска";
             this.SendDate.Name = "SendDate";
             // 
@@ -598,6 +555,77 @@
             this.lCategory.TabIndex = 1;
             this.lCategory.Text = "Категория товара";
             // 
+            // tsbEmployees
+            // 
+            this.tsbEmployees.AutoSize = false;
+            this.tsbEmployees.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEmployees.Image = global::Org.Properties.Resources.Employees;
+            this.tsbEmployees.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEmployees.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEmployees.Name = "tsbEmployees";
+            this.tsbEmployees.Size = new System.Drawing.Size(64, 64);
+            this.tsbEmployees.Text = "Сотрудники";
+            this.tsbEmployees.Click += new System.EventHandler(this.tsbEmployees_Click);
+            // 
+            // tsbVendors
+            // 
+            this.tsbVendors.AutoSize = false;
+            this.tsbVendors.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbVendors.Image = global::Org.Properties.Resources.Vendors;
+            this.tsbVendors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbVendors.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVendors.Name = "tsbVendors";
+            this.tsbVendors.Size = new System.Drawing.Size(64, 64);
+            this.tsbVendors.Text = "Поставщики";
+            this.tsbVendors.Click += new System.EventHandler(this.tsbVendors_Click);
+            // 
+            // tsbClients
+            // 
+            this.tsbClients.AutoSize = false;
+            this.tsbClients.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbClients.Image = global::Org.Properties.Resources.Clients;
+            this.tsbClients.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbClients.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbClients.Name = "tsbClients";
+            this.tsbClients.Size = new System.Drawing.Size(64, 64);
+            this.tsbClients.Text = "Клиенты";
+            this.tsbClients.Click += new System.EventHandler(this.tsbClients_Click);
+            // 
+            // tsManufactors
+            // 
+            this.tsManufactors.AutoSize = false;
+            this.tsManufactors.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsManufactors.Image = global::Org.Properties.Resources.Manufactors;
+            this.tsManufactors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsManufactors.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsManufactors.Name = "tsManufactors";
+            this.tsManufactors.Size = new System.Drawing.Size(64, 64);
+            this.tsManufactors.Text = "Производители";
+            this.tsManufactors.Click += new System.EventHandler(this.tsManufactors_Click);
+            // 
+            // tsProductCategories
+            // 
+            this.tsProductCategories.AutoSize = false;
+            this.tsProductCategories.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsProductCategories.Image = global::Org.Properties.Resources.Categories;
+            this.tsProductCategories.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsProductCategories.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsProductCategories.Name = "tsProductCategories";
+            this.tsProductCategories.Size = new System.Drawing.Size(64, 64);
+            this.tsProductCategories.Text = "Категории";
+            this.tsProductCategories.Click += new System.EventHandler(this.tsProductCategories_Click);
+            // 
+            // tssbReports
+            // 
+            this.tssbReports.AutoSize = false;
+            this.tssbReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tssbReports.Image = global::Org.Properties.Resources.Reports;
+            this.tssbReports.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tssbReports.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tssbReports.Name = "tssbReports";
+            this.tssbReports.Size = new System.Drawing.Size(78, 64);
+            this.tssbReports.Text = "Отчеты";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,6 +708,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalSendPrice;
         private System.Windows.Forms.Button bCancel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ToolStripButton tsManufactors;
+        private System.Windows.Forms.ToolStripButton tsProductCategories;
     }
 }
 

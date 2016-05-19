@@ -10,12 +10,18 @@ namespace Org.Services
         public Action<Client> ClientAdded { get; set; }
         public Action<Vendor> VendorAdded { get; set; }
         public Action<Employee> EmployeeAdded { get; set; }
+        public Action<ProductCategory> ProductCategoryAdded { get; set; }
+        public Action<Manufactor> ManufactorAdded { get; set; }
         public Action<Client> ClientUpdated { get; set; }
         public Action<Vendor> VendorUpdated { get; set; }
         public Action<Employee> EmployeeUpdated { get; set; }
+        public Action<Manufactor> ManufactorUpdated { get; set; }
+        public Action<ProductCategory> ProductCategoryUpdated { get; set; }
         public Action<Client> ClientDeleted { get; set; }
         public Action<Vendor> VendorDeleted { get; set; }
         public Action<Employee> EmployeeDeleted { get; set; }
+        public Action<Manufactor> ManufactorDeleted { get; set; }
+        public Action<ProductCategory> ProductCategoryDeleted { get; set; }
 
         public void Add(Client client)
         {
@@ -67,6 +73,36 @@ namespace Org.Services
         public static UpdateService GetService()
         {
             return _serviceInstance;
+        }
+
+        public void Add(Manufactor manufactor)
+        {
+            ManufactorAdded?.Invoke(manufactor);
+        }
+
+        public void Update(Manufactor manufactor)
+        {
+            ManufactorUpdated?.Invoke(manufactor);
+        }
+
+        public void Delete(Manufactor manufactor)
+        {
+            ManufactorDeleted?.Invoke(manufactor);
+        }
+
+        public void Add(ProductCategory manufactor)
+        {
+            ProductCategoryAdded?.Invoke(manufactor);
+        }
+
+        public void Update(ProductCategory manufactor)
+        {
+            ProductCategoryUpdated?.Invoke(manufactor);
+        }
+
+        public void Delete(ProductCategory manufactor)
+        {
+            ProductCategoryDeleted?.Invoke(manufactor);
         }
     }
 }

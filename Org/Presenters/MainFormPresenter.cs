@@ -46,15 +46,21 @@ namespace Org.Presenters
             _view.EditRequested += ViewEditRequested;
             _view.CancelRequested += ViewCancelRequested;
 
-            updateService.ClientAdded += UpdateService_ClientAdded;
+            updateService.ClientAdded += UpdateService_ClientUpdated;
             updateService.ClientUpdated += UpdateService_ClientUpdated;
-            updateService.ClientDeleted += UpdateService_ClientDeleted;
-            updateService.VendorAdded += UpdateService_VendorAdded;
+            updateService.ClientDeleted += UpdateService_ClientUpdated;
+            updateService.VendorAdded += UpdateService_VendorUpdated;
             updateService.VendorUpdated += UpdateService_VendorUpdated;
-            updateService.VendorDeleted += UpdateService_VendorDeleted;
-            updateService.EmployeeAdded += UpdateService_EmployeeAdded;
+            updateService.VendorDeleted += UpdateService_VendorUpdated;
+            updateService.EmployeeAdded += UpdateService_EmployeeUpdated;
             updateService.EmployeeUpdated += UpdateService_EmployeeUpdated;
-            updateService.EmployeeDeleted += UpdateService_EmployeeDeleted;
+            updateService.EmployeeDeleted += UpdateService_EmployeeUpdated;
+            updateService.ManufactorAdded += UpdateService_ManufactorUpdated;
+            updateService.ManufactorUpdated += UpdateService_ManufactorUpdated;
+            updateService.ManufactorDeleted += UpdateService_ManufactorUpdated;
+            updateService.ProductCategoryAdded += UpdateService_ProducCategoryUpdated;
+            updateService.ProductCategoryUpdated += UpdateService_ProducCategoryUpdated;
+            updateService.ProductCategoryDeleted += UpdateService_ProducCategoryUpdated;
         }
 
         private void ViewLoadedRequested()
@@ -80,12 +86,12 @@ namespace Org.Presenters
                 })
                 .ToList();
             var categories = _categoryRepository.Get()
-                .Select(x => new ProductCategoryIndexPe {
+                .Select(x => new DicIndexPe {
                     Id = x.Id,
                     Name = x.Name
                 });
             var manufactors = _manufactorRepository.Get()
-                .Select(x => new ManufactorIndexPe {
+                .Select(x => new DicIndexPe {
                     Id = x.Id,
                     Name = x.Name
                 });
@@ -220,17 +226,6 @@ namespace Org.Presenters
             _view.ShowEmptyProduct();
         }
 
-        private void UpdateService_ClientAdded(Client obj)
-        {
-            var clients = _clientRepository.Get()
-                .Select(x => new ClientIndexPe
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                });
-            _view.InitClients(clients);
-        }
-
         private void UpdateService_ClientUpdated(Client obj)
         {
             var clients = _clientRepository.Get()
@@ -240,17 +235,6 @@ namespace Org.Presenters
                     Name = x.Name
                 });
             _view.InitClients(clients);
-        }
-
-        private void UpdateService_VendorAdded(Vendor obj)
-        {
-            var vendors = _vendorRepository.Get()
-                .Select(x => new VendorIndexPe
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                });
-            _view.InitVendors(vendors);
         }
 
         private void UpdateService_VendorUpdated(Vendor obj)
@@ -264,17 +248,6 @@ namespace Org.Presenters
             _view.InitVendors(vendors);
         }
 
-        private void UpdateService_EmployeeAdded(Employee obj)
-        {
-            var employess = _employeeRepository.Get()
-                .Select(x => new EmployeeIndexPe
-                {
-                    Id = x.Id,
-                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName)
-                });
-            _view.InitEmployees(employess);
-        }
-
         private void UpdateService_EmployeeUpdated(Employee obj)
         {
             var employess = _employeeRepository.Get()
@@ -286,37 +259,26 @@ namespace Org.Presenters
             _view.InitEmployees(employess);
         }
 
-        public void UpdateService_ClientDeleted(Client obj)
+        private void UpdateService_ManufactorUpdated(Manufactor obj)
         {
-            var clients = _clientRepository.Get()
-                .Select(x => new ClientIndexPe
+            var employess = _manufactorRepository.Get()
+                .Select(x => new DicIndexPe
                 {
                     Id = x.Id,
                     Name = x.Name
                 });
-            _view.InitClients(clients);
+            _view.InitManufactors(employess);
         }
 
-        public void UpdateService_VendorDeleted(Vendor obj)
+        public void UpdateService_ProducCategoryUpdated(ProductCategory category)
         {
-            var vendors = _vendorRepository.Get()
-                .Select(x => new VendorIndexPe
+            var employess = _categoryRepository.Get()
+                .Select(x => new DicIndexPe
                 {
                     Id = x.Id,
                     Name = x.Name
                 });
-            _view.InitVendors(vendors);
-        }
-
-        public void UpdateService_EmployeeDeleted(Employee obj)
-        {
-            var employess = _employeeRepository.Get()
-                .Select(x => new EmployeeIndexPe
-                {
-                    Id = x.Id,
-                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName)
-                });
-            _view.InitEmployees(employess);
+            _view.InitCategories(employess);
         }
     }
 }

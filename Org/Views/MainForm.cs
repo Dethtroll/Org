@@ -60,8 +60,8 @@ namespace Org
 
         public void InitProducts(
             IEnumerable<ProductIntexPe> products,
-            IEnumerable<ProductCategoryIndexPe> categories,
-            IEnumerable<ManufactorIndexPe> manufactors, 
+            IEnumerable<DicIndexPe> categories,
+            IEnumerable<DicIndexPe> manufactors, 
             IEnumerable<VendorIndexPe> vendors, 
             IEnumerable<ClientIndexPe> clients, 
             IEnumerable<EmployeeIndexPe> employess
@@ -85,7 +85,7 @@ namespace Org
             }
         }
 
-        public void InitCategories(IEnumerable<ProductCategoryIndexPe> categories)
+        public void InitCategories(IEnumerable<DicIndexPe> categories)
         {
             cbCategory.Items.Clear();
             foreach (var category in categories)
@@ -94,7 +94,7 @@ namespace Org
             }
         }
 
-        public void InitManufactors(IEnumerable<ManufactorIndexPe> manufactors)
+        public void InitManufactors(IEnumerable<DicIndexPe> manufactors)
         {
             cbManufactor.Items.Clear();
             foreach (var manufactor in manufactors)
@@ -154,8 +154,8 @@ namespace Org
 
         public void ShowProduct(ProductEditPe pe)
         {
-            cbCategory.SelectedIndex = cbCategory.Items.IndexOf(new ProductCategoryIndexPe { Id = pe.Category });
-            cbManufactor.SelectedIndex = cbManufactor.Items.IndexOf(new ManufactorIndexPe { Id = pe.Manufactor });
+            cbCategory.SelectedIndex = cbCategory.Items.IndexOf(new DicIndexPe { Id = pe.Category });
+            cbManufactor.SelectedIndex = cbManufactor.Items.IndexOf(new DicIndexPe { Id = pe.Manufactor });
             nPrice.Value = pe.Price;
             tbNumber.Text = pe.Number;
             cbVendor.SelectedIndex = cbVendor.Items.IndexOf(new VendorIndexPe { Id = pe.Vendor });
@@ -211,6 +211,20 @@ namespace Org
             clientsForm.ShowDialog(this);
         }
 
+        public void ShowManufactorsWindows()
+        {
+            var manufactorsForm = new ManufactorsForm(_context, _updateService);
+
+            manufactorsForm.ShowDialog(this);
+        }
+
+        public void ShowProductCategoriesWindows()
+        {
+            var form = new ProductCategoriesForm(_context, _updateService);
+
+            form.ShowDialog(this);
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Loaded();
@@ -230,8 +244,8 @@ namespace Org
 
             var pe = new ProductEditPe
             {
-                Category = ((ProductCategoryIndexPe)cbCategory.SelectedItem).Id,
-                Manufactor = ((ManufactorIndexPe)cbManufactor.SelectedItem).Id,
+                Category = ((DicIndexPe)cbCategory.SelectedItem).Id,
+                Manufactor = ((DicIndexPe)cbManufactor.SelectedItem).Id,
                 Price = nPrice.Value,
                 Number = tbNumber.Text,
                 Vendor = ((VendorIndexPe)cbVendor.SelectedItem).Id,
@@ -291,6 +305,16 @@ namespace Org
         private void tsbClients_Click(object sender, EventArgs e)
         {
             ShowClientsWindow();
+        }
+
+        private void tsManufactors_Click(object sender, EventArgs e)
+        {
+            ShowManufactorsWindows();
+        }
+
+        private void tsProductCategories_Click(object sender, EventArgs e)
+        {
+            ShowProductCategoriesWindows();
         }
     }
 }

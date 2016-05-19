@@ -78,6 +78,8 @@
     <Compile Include="Pes\ProductIntexPe.cs" />
     <Compile Include="Presenters\ClientFormPresenter.cs" />
     <Compile Include="Presenters\EmployeesFormPresenter.cs" />
+    <Compile Include="Presenters\ManufactorPresenter.cs" />
+    <Compile Include="Presenters\ProductCategoriesPresenter.cs" />
     <Compile Include="Presenters\VendorFormPresenter.cs" />
     <Compile Include="Common\Services\IUpdateService.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
@@ -103,6 +105,18 @@
     <Compile Include="Presenters\MainFormPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ManufactorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManufactorsForm.Designer.cs">
+      <DependentUpon>ManufactorsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductCategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductCategoriesForm.Designer.cs">
+      <DependentUpon>ProductCategoriesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\VendorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +142,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\ManufactorsForm.resx">
+      <DependentUpon>ManufactorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductCategoriesForm.resx">
+      <DependentUpon>ProductCategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\VendorsForm.resx">
       <DependentUpon>VendorsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +173,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Manufactors.png" />
+    <None Include="Resources\Categories.png" />
     <None Include="Resources\Reports.png" />
     <None Include="Resources\Employees.png" />
     <None Include="Resources\Vendors.png" />

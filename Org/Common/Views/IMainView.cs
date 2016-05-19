@@ -13,12 +13,12 @@ namespace Org.Common.Views
         Action<int> EditRequested { get; set; }
         Action CancelRequested { get; set; }
 
-        void InitProducts(IEnumerable<ProductIntexPe> products, IEnumerable<ProductCategoryIndexPe> categories, IEnumerable<ManufactorIndexPe> manufactors, IEnumerable<VendorIndexPe> vendors, IEnumerable<ClientIndexPe> clients, IEnumerable<EmployeeIndexPe> employess);
+        void InitProducts(IEnumerable<ProductIntexPe> products, IEnumerable<DicIndexPe> categories, IEnumerable<DicIndexPe> manufactors, IEnumerable<VendorIndexPe> vendors, IEnumerable<ClientIndexPe> clients, IEnumerable<EmployeeIndexPe> employess);
         void ShowProduct(ProductEditPe pe);
         void ShowEmptyProduct();
 
-        void InitCategories(IEnumerable<ProductCategoryIndexPe> categories);
-        void InitManufactors(IEnumerable<ManufactorIndexPe> manufactors);
+        void InitCategories(IEnumerable<DicIndexPe> categories);
+        void InitManufactors(IEnumerable<DicIndexPe> manufactors);
         void InitVendors(IEnumerable<VendorIndexPe> vendors);
         void InitClients(IEnumerable<ClientIndexPe> clients);
         void InitEmployees(IEnumerable<EmployeeIndexPe> employess);
@@ -42,7 +42,7 @@ namespace Org.Common.Views
         void ShowEmployee(EmployeeEditPe pe);
         void ShowEmptyEmployee();
     }
-    
+
     public interface ICompaniesView
     {
         Action Loaded { get; set; }
@@ -56,5 +56,20 @@ namespace Org.Common.Views
         void InitCompanies(IEnumerable<CompanyIndexPe> companies);
         void ShowCompany(CompanyEditPe pe);
         void ShowEmptyCompany();
+    }
+
+    public interface IDictionayView
+    {
+        Action Loaded { get; set; }
+        Action AddItem { get; set; }
+        Action<DicEditPe> AddRequested { get; set; }
+        Action<DicEditPe> UpdateRequested { get; set; }
+        Action<int> EditRequested { get; set; }
+        Action<int> DeleteRequested { get; set; }
+        Action CancelRequested { get; set; }
+
+        void InitDic(IEnumerable<DicIndexPe> companies);
+        void ShowItem(DicEditPe pe);
+        void ShowEmptyItem();
     }
 }

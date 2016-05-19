@@ -63,6 +63,16 @@ namespace Org.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Categories {
+            get {
+                object obj = ResourceManager.GetObject("Categories", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clients {
             get {
                 object obj = ResourceManager.GetObject("Clients", resourceCulture);
@@ -76,6 +86,16 @@ namespace Org.Properties {
         internal static System.Drawing.Bitmap Employees {
             get {
                 object obj = ResourceManager.GetObject("Employees", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Manufactors {
+            get {
+                object obj = ResourceManager.GetObject("Manufactors", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

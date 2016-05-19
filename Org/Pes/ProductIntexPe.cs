@@ -34,50 +34,6 @@ namespace Org.Pes
         public string Description { get; set; }
     }
 
-    public class ProductCategoryIndexPe
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj != null && obj is ProductCategoryIndexPe && Id == ((ProductCategoryIndexPe)obj).Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
-    }
-
-    public class ManufactorIndexPe
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj != null && obj is ManufactorIndexPe && Id == ((ManufactorIndexPe)obj).Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
-    }
-
     public class VendorIndexPe
     {
         public int Id { get; set; }
@@ -168,6 +124,31 @@ namespace Org.Pes
         public string Phone { get; set; }
     }
     public class CompanyEditPe : CompanyIndexPe
+    {
+    }
+
+    public class DicIndexPe
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+        
+        public override bool Equals(object obj)
+        {
+            return obj != null && obj is DicIndexPe && Id == ((DicIndexPe)obj).Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+    }
+
+    public class DicEditPe : DicIndexPe
     {
     }
 }
