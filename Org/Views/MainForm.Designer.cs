@@ -36,7 +36,6 @@
             this.tsbClients = new System.Windows.Forms.ToolStripButton();
             this.tsManufactors = new System.Windows.Forms.ToolStripButton();
             this.tsProductCategories = new System.Windows.Forms.ToolStripButton();
-            this.tssbReports = new System.Windows.Forms.ToolStripSplitButton();
             this.gvCatalog = new System.Windows.Forms.DataGridView();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Manufactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +85,7 @@
             this.tbNumber = new System.Windows.Forms.TextBox();
             this.lManufactor = new System.Windows.Forms.Label();
             this.lCategory = new System.Windows.Forms.Label();
-            this.tsmiEmployeeProductList = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsReport = new System.Windows.Forms.ToolStripButton();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCatalog)).BeginInit();
             this.gbAddEdit.SuspendLayout();
@@ -109,7 +108,7 @@
             this.tsbClients,
             this.tsManufactors,
             this.tsProductCategories,
-            this.tssbReports});
+            this.tsReport});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mainToolStrip.Name = "mainToolStrip";
             this.mainToolStrip.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
@@ -176,19 +175,6 @@
             this.tsProductCategories.Size = new System.Drawing.Size(64, 64);
             this.tsProductCategories.Text = "Категории";
             this.tsProductCategories.Click += new System.EventHandler(this.tsProductCategories_Click);
-            // 
-            // tssbReports
-            // 
-            this.tssbReports.AutoSize = false;
-            this.tssbReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tssbReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEmployeeProductList});
-            this.tssbReports.Image = global::Org.Properties.Resources.Reports;
-            this.tssbReports.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tssbReports.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tssbReports.Name = "tssbReports";
-            this.tssbReports.Size = new System.Drawing.Size(78, 64);
-            this.tssbReports.Text = "Отчеты";
             // 
             // gvCatalog
             // 
@@ -629,12 +615,17 @@
             this.lCategory.TabIndex = 1;
             this.lCategory.Text = "Категория товара";
             // 
-            // tsmiEmployeeProductList
+            // tsReport
             // 
-            this.tsmiEmployeeProductList.Name = "tsmiEmployeeProductList";
-            this.tsmiEmployeeProductList.Size = new System.Drawing.Size(184, 22);
-            this.tsmiEmployeeProductList.Text = "Техника сотрудника";
-            this.tsmiEmployeeProductList.Click += new System.EventHandler(this.tsmiEmployeeProductList_Click);
+            this.tsReport.AutoSize = false;
+            this.tsReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsReport.Image = global::Org.Properties.Resources.Reports;
+            this.tsReport.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsReport.Name = "tsReport";
+            this.tsReport.Size = new System.Drawing.Size(68, 59);
+            this.tsReport.Text = "Отчет Техника сотрудника";
+            this.tsReport.Click += new System.EventHandler(this.tsmiEmployeeProductList_Click);
             // 
             // MainForm
             // 
@@ -669,7 +660,6 @@
         private System.Windows.Forms.ToolStripButton tsbEmployees;
         private System.Windows.Forms.ToolStripButton tsbVendors;
         private System.Windows.Forms.ToolStripButton tsbClients;
-        private System.Windows.Forms.ToolStripSplitButton tssbReports;
         private System.Windows.Forms.GroupBox gbAddEdit;
         private System.Windows.Forms.ComboBox cbManufactor;
         private System.Windows.Forms.ComboBox cbCategory;
@@ -720,7 +710,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripButton tsManufactors;
         private System.Windows.Forms.ToolStripButton tsProductCategories;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeProductList;
+        private System.Windows.Forms.ToolStripButton tsReport;
     }
 }
 
