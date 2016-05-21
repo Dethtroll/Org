@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Org.Domain
@@ -17,5 +18,7 @@ namespace Org.Domain
         public DateTime FirstWorkDay { get; set; }
         public string Position { get; set; }
         public string Degree { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

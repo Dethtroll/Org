@@ -225,6 +225,13 @@ namespace Org
             form.ShowDialog(this);
         }
 
+        public void ShowEmployeeProductReport()
+        {
+            var form = new EmployeeReport(_context, _updateService);
+
+            form.ShowDialog(this);
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Loaded();
@@ -315,6 +322,11 @@ namespace Org
         private void tsProductCategories_Click(object sender, EventArgs e)
         {
             ShowProductCategoriesWindows();
+        }
+
+        private void tsmiEmployeeProductList_Click(object sender, EventArgs e)
+        {
+            ShowEmployeeProductReport();
         }
     }
 }
