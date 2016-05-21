@@ -74,18 +74,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Repositories\IClientRepository.cs" />
+    <Compile Include="Common\Repositories\IEmployeeRepository.cs" />
+    <Compile Include="Common\Repositories\IManufactorRepository.cs" />
+    <Compile Include="Common\Repositories\IProductCategoryRepository.cs" />
     <Compile Include="Common\Repositories\IProductRepository.cs" />
+    <Compile Include="Common\Repositories\IRepository.cs" />
+    <Compile Include="Common\Repositories\IVendorRepository.cs" />
     <Compile Include="Common\Repositories\OrgContext.cs" />
+    <Compile Include="Common\Views\ICompaniesView.cs" />
+    <Compile Include="Common\Views\IDictionayView.cs" />
+    <Compile Include="Common\Views\IEmployeesView.cs" />
     <Compile Include="Common\Views\IMainView.cs" />
+    <Compile Include="Domain\Client.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\Manufactor.cs" />
     <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\ProductCategory.cs" />
+    <Compile Include="Domain\Vendor.cs" />
+    <Compile Include="Pes\ClientIndexPe.cs" />
+    <Compile Include="Pes\CompanyEditPe.cs" />
+    <Compile Include="Pes\CompanyIndexPe.cs" />
+    <Compile Include="Pes\DicEditPe.cs" />
+    <Compile Include="Pes\DicIndexPe.cs" />
+    <Compile Include="Pes\EmployeeEditPe.cs" />
+    <Compile Include="Pes\EmployeeIndexPe.cs" />
+    <Compile Include="Pes\ProductEditPe.cs" />
     <Compile Include="Pes\ProductIntexPe.cs" />
+    <Compile Include="Pes\VendorIndexPe.cs" />
     <Compile Include="Presenters\ClientFormPresenter.cs" />
     <Compile Include="Presenters\EmployeesFormPresenter.cs" />
     <Compile Include="Presenters\ManufactorPresenter.cs" />
     <Compile Include="Presenters\ProductCategoriesPresenter.cs" />
     <Compile Include="Presenters\VendorFormPresenter.cs" />
     <Compile Include="Common\Services\IUpdateService.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\ManufactorRepository.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\VendorRepository.cs" />
     <Compile Include="Services\UpdateService.cs" />
     <Compile Include="Views\ClinetsForm.cs">
       <SubType>Form</SubType>

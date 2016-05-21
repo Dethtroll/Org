@@ -1,10 +1,8 @@
-﻿using System;
-using Org.Common.Views;
+﻿using Org.Common.Views;
 using Org.Common.Repositories;
 using System.Linq;
 using Org.Pes;
 using Org.Domain;
-using Org.Repositories;
 using Org.Common.Services;
 
 namespace Org.Presenters

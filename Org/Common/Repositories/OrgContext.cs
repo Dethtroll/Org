@@ -1,5 +1,4 @@
-﻿
-using Org.Domain;
+﻿using Org.Domain;
 using System.Data.Entity;
 
 namespace Org.Common.Repositories

@@ -6,7 +6,8 @@ namespace Org.Services
 {
     public class UpdateService : IUpdateService
     {
-        protected static readonly UpdateService _serviceInstance;
+        protected static readonly UpdateService ServiceInstance;
+
         public Action<Client> ClientAdded { get; set; }
         public Action<Vendor> VendorAdded { get; set; }
         public Action<Employee> EmployeeAdded { get; set; }
@@ -22,6 +23,15 @@ namespace Org.Services
         public Action<Employee> EmployeeDeleted { get; set; }
         public Action<Manufactor> ManufactorDeleted { get; set; }
         public Action<ProductCategory> ProductCategoryDeleted { get; set; }
+        
+        static UpdateService()
+        {
+            ServiceInstance = new UpdateService();
+        }
+
+        protected UpdateService()
+        {
+        }
 
         public void Add(Client client)
         {
@@ -61,18 +71,9 @@ namespace Org.Services
             EmployeeDeleted?.Invoke(employee);
         }
 
-        static UpdateService()
-        {
-            _serviceInstance = new UpdateService();
-        }
-
-        protected UpdateService()
-        {
-        }
-
         public static UpdateService GetService()
         {
-            return _serviceInstance;
+            return ServiceInstance;
         }
 
         public void Add(Manufactor manufactor)

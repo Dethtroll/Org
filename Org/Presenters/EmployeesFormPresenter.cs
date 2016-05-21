@@ -35,7 +35,7 @@ namespace Org.Presenters
                 .Select(x => new EmployeeIndexPe
                 {
                     Id = x.Id,
-                    Name = string.Format("{0} {1} {2}", x.LastName, x.FirstName, x.MiddleName),
+                    Name = $"{x.LastName} {x.FirstName} {x.MiddleName}",
                     Address = x.Address,
                     Phone = x.Phone,
                     BirthDay = x.BirthDay,
