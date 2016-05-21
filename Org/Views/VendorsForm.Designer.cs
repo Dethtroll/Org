@@ -188,7 +188,7 @@
             this.Controls.Add(this.dgvCompanies);
             this.Controls.Add(this.groupBox1);
             this.Name = "VendorsForm";
-            this.Text = "VendorsForm";
+            this.Text = "Поставщики";
             this.Load += new System.EventHandler(this.CompanyForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

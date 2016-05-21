@@ -120,7 +120,7 @@
             this.Controls.Add(this.lbItems);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManufactorsForm";
-            this.Text = "ManufactorsForm";
+            this.Text = "Производители";
             this.Load += new System.EventHandler(this.ManufactorsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

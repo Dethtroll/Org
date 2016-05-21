@@ -120,7 +120,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbItems);
             this.Name = "ProductCategoriesForm";
-            this.Text = "ProductCategoriesForm";
+            this.Text = "Категории техники";
             this.Load += new System.EventHandler(this.ManufactorsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

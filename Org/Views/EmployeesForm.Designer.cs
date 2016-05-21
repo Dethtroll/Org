@@ -344,7 +344,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgEmployees);
             this.Name = "EmployeesForm";
-            this.Text = "EmployeesForm";
+            this.Text = "Сотрудники";
             this.Load += new System.EventHandler(this.EmployeesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployees)).EndInit();
             this.groupBox1.ResumeLayout(false);

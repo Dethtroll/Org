@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Org.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
@@ -173,6 +176,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Org.ico" />
+    <None Include="Resources\Org.png" />
     <None Include="Resources\Manufactors.png" />
     <None Include="Resources\Categories.png" />
     <None Include="Resources\Reports.png" />

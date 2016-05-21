@@ -635,7 +635,7 @@
             this.Controls.Add(this.gvCatalog);
             this.Controls.Add(this.mainToolStrip);
             this.Name = "MainForm";
-            this.Text = "Каталог";
+            this.Text = "Каталог орг. техники";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainToolStrip.ResumeLayout(false);
             this.mainToolStrip.PerformLayout();

@@ -130,6 +130,12 @@
   <data name="Manufactors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Manufactors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Org" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Org.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Org1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Org.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
